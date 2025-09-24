@@ -1,0 +1,133 @@
+/* Overall Container for the health metrics cards */
+.health-metrics-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Spacing between each metric card */
+    padding: 20px; /* Padding around the entire set of cards */
+    background-color: #f5f5f5; /* Light background for the overall page, as seen in screenshot */
+}
+
+/* Individual Metric Card Styling */
+.metric-card {
+    background-color: #2a2c37; /* Dark background of the card */
+    border-radius: 12px;
+    padding: 20px 25px; /* Padding inside the card */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between header and progress area */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    min-width: 400px; /* Ensure cards have a decent width */
+}
+
+/* Header Section (Title and Value) */
+.metric-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #cbccce; /* Grayish-white for titles */
+}
+
+.metric-value-group {
+    display: flex;
+    align-items: baseline; /* Align units to the baseline of the value */
+    gap: 5px;
+}
+
+.metric-value {
+    font-size: 2.2rem; /* Large font for the main number */
+    font-weight: 700; /* Bold */
+    color: #fcfcfc; /* White for the main number */
+}
+
+.metric-unit {
+    font-size: 0.85rem; /* Smaller font for units */
+    color: #9ea1a6; /* Lighter gray for units */
+    font-weight: 400;
+}
+
+/* Progress Bar and Trend Area */
+.metric-progress-area {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Spacing between progress bar and trend */
+}
+
+.progress-bar-base {
+    width: 100%;
+    height: 8px; /* Height of the progress bar track */
+    background-color: #40424c; /* Darker gray for the uncolored part of the bar */
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden; /* Ensures ranges and pointer stay within bounds */
+}
+
+/* Individual colored range segments */
+.progress-range {
+    height: 100%;
+    position: absolute;
+    border-radius: 4px; /* Match base border-radius */
+}
+
+.green-range {
+    background-color: #35c759; /* Bright green for normal/good range */
+}
+
+.red-range {
+    background-color: #ff3a30; /* Bright red for high/risk range */
+}
+
+/* The white pointer (triangle) for the current value */
+.progress-indicator {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Center the pointer horizontally at its `left` position */
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 8px solid #fcfcfc; /* White triangle pointing down */
+    z-index: 10; /* Ensure it's above the progress bar segments */
+}
+
+/* Trend Indicator (small graph and value) */
+.metric-trend {
+    display: flex;
+    justify-content: flex-end; /* Align trend to the right */
+    align-items: center;
+    gap: 8px; /* Spacing between graph placeholder and value */
+    padding-right: 5px; /* Small padding to align with the visual */
+}
+
+.trend-line-placeholder {
+    width: 40px; /* Width for the small graph line */
+    height: 15px; /* Height for the small graph line */
+    background-color: #40424c; /* Placeholder color, ideally this would be an SVG or image */
+    border-radius: 3px; /* Soft edges */
+    /* Add specific background images here if you have them for the trend lines */
+    /* For instance, if you have a down trend SVG, use:
+    background-image: url('path/to/down-trend.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    */
+}
+
+.trend-indicator {
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 3px; /* Spacing between arrow and number */
+}
+
+.diff-up-color {
+    color: #ff3a30; /* Red for upward trend */
+}
+
+.diff-down-color {
+    color: #35c759; /* Green for downward trend */
+}

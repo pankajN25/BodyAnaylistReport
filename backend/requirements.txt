@@ -1,0 +1,6 @@
+Flask
+PyMySQL
+python-dotenv
+Flask-Cors
+requests
+google-auth-oauthlib

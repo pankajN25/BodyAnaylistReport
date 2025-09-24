@@ -1,0 +1,137 @@
+.blank-report-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  width: 100%;
+}
+
+.blank-report-header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  Width: 100%;
+}
+
+.blank-report-header h1 {
+  margin: 0;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.blank-report-main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.report-preview {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.form-preview h3 {
+  color: #4a90e2;
+  margin-top: 1.5rem;
+}
+
+.form-preview p {
+  margin: 0.5rem 0;
+}
+
+.form-preview input,
+.form-preview textarea {
+  border: 1px dashed #ccc;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  background: #fafafa;
+}
+
+.download-section {
+  text-align: center;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.download-pdf-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.download-pdf-btn:hover {
+  background-color: #357abd;
+}
+
+
+/* src/component/BlankReportPage.css - Add these new styles */
+.pdf-page {
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  margin: 0;
+  padding: 0;
+  page-break-after: always; /* For browser print fallback */
+  position: relative;
+  box-sizing: border-box;
+  background: white;
+}
+
+/* Simulate page borders in preview (remove for production if unwanted) */
+.pdf-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 1px dashed #ccc; /* Dotted border to show page edges in browser */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pdf-page img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Scale image to fit A4 without distortion */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hide borders when printing PDF (jsPDF handles this) */
+@media print {
+  .pdf-page::before {
+    border: none;
+  }
+}
+
+.loading-spinner {
+  text-align: center;
+  padding: 20px;
+  color: #4a90e2;
+  font-weight: bold;
+}
+
+/* Ensure full viewport for preview */
+.blank-report-render {
+  overflow: visible; /* Allow scrolling for multi-page preview */
+}

@@ -1,0 +1,193 @@
+/* BodyAnalysisForm2.css */
+
+:root {
+  --primary-color: #4f46e5;
+  --primary-hover-color: #4338ca;
+  --text-color: #333;
+  --secondary-text-color: #666;
+  --border-color: #d1d5db;
+  --background-color: #f9fafb;
+  --card-background: #fff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --border-radius: 8px;
+
+  /* Custom colors from the image */
+  --normal-bg: #d4edda;
+  --high-bg: #cce5ff;
+  --risk-bg: #f8d7da;
+  --header-normal: #28a745;
+  --header-high: #007bff;
+  --header-risk: #dc3545;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.form-container {
+  max-width: 900px; /* Wider container for the table */
+  margin: 40px auto;
+  padding: 30px 40px;
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.form-title {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.form-subtitle {
+  text-align: center;
+  color: var(--secondary-text-color);
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.analysis-table {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.table-header-row,
+.table-row {
+  display: contents;
+}
+
+.header-cell,
+.metric-cell,
+.range-cell {
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header-cell {
+  font-weight: 700;
+  color: #fff;
+}
+
+.green-header { background-color: var(--header-normal); }
+.blue-header { background-color: var(--header-high); }
+.red-header { background-color: var(--header-risk); }
+
+.empty-cell {
+  background-color: #f1f1f1;
+}
+
+.metric-cell {
+  background-color: #f8f9fa;
+  align-items: flex-start;
+  font-weight: 600;
+}
+
+.range-cell.highlighted {
+  border: 2px solid var(--border-color); /* Thicker border */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle glow effect */
+  animation: pulse-border 1.5s infinite;
+}
+
+/* Specific border colors for highlighted cells */
+.range-cell.normal-bg.highlighted { border-color: var(--header-normal); }
+.range-cell.high-bg.highlighted { border-color: var(--header-high); }
+.range-cell.risk-bg.highlighted { border-color: var(--header-risk); }
+
+
+@keyframes pulse-border {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.metric-cell label {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+.metric-cell span {
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+}
+
+.metric-cell input {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  width: 90%;
+}
+
+.range-cell {
+  background-color: #f8f9fa;
+  font-size: 0.9rem;
+}
+.range-cell span {
+  display: block;
+}
+.normal-bg { background-color: var(--normal-bg); }
+.high-bg { background-color: var(--high-bg); }
+.risk-bg { background-color: var(--risk-bg); }
+
+.full-width-cell {
+  grid-column: 2 / span 3;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.submit-button,
+.back-button {
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button {
+  color: #fff;
+  background-color: var(--primary-color);
+  border: none;
+}
+
+.submit-button:hover {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px);
+}
+
+.back-button {
+  color: var(--text-color);
+  background-color: #f1f1f1;
+  border: 1px solid var(--border-color);
+}
+
+.back-button:hover {
+  background-color: #e2e2e2;
+  transform: translateY(-2px);
+}

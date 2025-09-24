@@ -1,0 +1,278 @@
+/* BodyAnalysisForm1.css - Modern Design */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --secondary-color: #3a0ca3;
+  --accent-color: #f72585;
+  --light-bg: #f8f9fa;
+  --dark-text: #2d3436;
+  --light-text: #636e72;
+  --border-color: #e0e0e0;
+  --success-color: #4cc9f0;
+  --warning-color: #f9c74f;
+  --error-color: #f94144;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --input-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.ba-form-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+.ba-form-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ba-form-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin: 0 0 0.5rem 0;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ba-form-subtitle {
+  font-size: 1rem;
+  color: var(--light-text);
+  margin: 0;
+}
+
+.ba-form-section {
+  margin-bottom: 2.5rem;
+  padding: 1.8rem;
+  background: var(--light-bg);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.ba-form-section:hover {
+  transform: translateY(-3px);
+}
+
+.ba-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0 0 1.5rem 0;
+  padding-left: 0.8rem;
+  border-left: 4px solid var(--primary-color);
+}
+
+.ba-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.ba-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ba-input-label {
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  color: var(--dark-text);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+}
+
+.ba-required {
+  color: var(--error-color);
+  margin-left: 4px;
+}
+
+.ba-input-field {
+  padding: 0.9rem 1.2rem;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-size: 1rem;
+  color: var(--dark-text);
+  background: white;
+  transition: all 0.3s ease;
+  box-shadow: var(--input-shadow);
+}
+
+.ba-input-field:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.15);
+}
+
+.ba-input-field:hover {
+  border-color: #c0c0c0;
+}
+
+.ba-readonly {
+  background-color: #f8f9fa;
+  color: var(--light-text);
+  cursor: not-allowed;
+}
+
+/* Gender Radio Styles */
+.ba-gender-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.ba-gender-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  padding-left: 32px;
+}
+
+.ba-gender-radio {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ba-gender-custom {
+  position: absolute;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: white;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.ba-gender-radio:checked ~ .ba-gender-custom {
+  border-color: var(--primary-color);
+  background-color: var(--primary-color);
+}
+
+.ba-gender-custom:after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+}
+
+.ba-gender-radio:checked ~ .ba-gender-custom:after {
+  display: block;
+}
+
+.ba-gender-label {
+  margin-left: 8px;
+  font-size: 0.95rem;
+  color: var(--dark-text);
+  font-weight: 500;
+}
+
+/* Button Styles */
+.ba-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.ba-submit-button {
+  padding: 1rem 2.5rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ba-submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+}
+
+.ba-submit-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ba-form-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .ba-form-title {
+    font-size: 1.8rem;
+  }
+  
+  .ba-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .ba-form-section {
+    padding: 1.2rem;
+  }
+  
+  .ba-gender-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .ba-button-container {
+    justify-content: center;
+  }
+  
+  .ba-submit-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Animation for form sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ba-form-section {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.ba-form-section:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+/* Focus states for accessibility */
+.ba-input-field:focus,
+.ba-gender-radio:focus ~ .ba-gender-custom {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
