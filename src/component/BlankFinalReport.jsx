@@ -5,7 +5,7 @@ import '../index.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import wellnessCenterLogo from './wellness-center-logo.png'; // Default fallback
 import reportImage from './blank-report11.jpg';
-import reportImg2 from './blank-report2.PNG';
+import reportImg2 from './blank-report22.png';
 import reportImg3 from './blank-report3.PNG'; // New image for the second page
 import reportImg4 from './blank-report4.jpg'; // New image for the second page
 const BlankFinalReport = ({ agentData }) => {
