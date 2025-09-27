@@ -271,7 +271,7 @@ const RegistrationForm = ({ onRegistrationSuccess }) => {
             </Form.Group>
 
             <Form.Group className="input-group">
-              <Form.Label>Herbalife Id <span className="required">*</span></Form.Label>
+              <Form.Label>Herbalife Member ID <span className="required">*</span></Form.Label>
               <div className="input-container">
 
                 <Form.Control
@@ -301,7 +301,7 @@ const RegistrationForm = ({ onRegistrationSuccess }) => {
             </Form.Group>
 
             <Form.Group className="input-group">
-              <Form.Label>Photo</Form.Label>
+              <Form.Label> Herbalife Member Photo</Form.Label>
               <div className="file-input-container">
                 <Form.Control
                   type="file"
@@ -319,7 +319,7 @@ const RegistrationForm = ({ onRegistrationSuccess }) => {
             </Form.Group>
 
             <Form.Group className="input-group">
-              <Form.Label>Logo Image</Form.Label>
+              <Form.Label>Herbalife wellness center Logo Image</Form.Label>
               <div className="file-input-container">
                 <Form.Control
                   type="file"

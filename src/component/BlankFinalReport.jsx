@@ -7,7 +7,7 @@ import wellnessCenterLogo from './wellness-center-logo.png'; // Default fallback
 import reportImage from './blank-report11.jpg';
 import reportImg2 from './blank-report2.PNG';
 import reportImg3 from './blank-report3.PNG'; // New image for the second page
-
+import reportImg4 from './blank-report4.jpg'; // New image for the second page
 const BlankFinalReport = ({ agentData }) => {
   if (!agentData) {
     return <div className="no-data-message">No agent data available.</div>;
@@ -171,6 +171,7 @@ const BlankFinalReport = ({ agentData }) => {
             </div>
           </div>
         </div>
+        
       </div>
 
       {/* Page 2: First User Information Image */}
@@ -189,6 +190,15 @@ const BlankFinalReport = ({ agentData }) => {
         />
           <img 
           src={reportImg3} 
+          alt="User  Information Page 3" 
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+          loading="lazy" 
+        />
+      </div>
+        <div className="pdf-page" data-page="3">
+      
+          <img 
+          src={reportImg4} 
           alt="User  Information Page 3" 
           style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
           loading="lazy" 

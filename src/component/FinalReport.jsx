@@ -740,7 +740,7 @@ const FinalReport = ({ allData, agentData }) => {
                                 </div>
                                 <div className="trend-line-exact">
                                     <span className="trend-diff-exact red-text">
-                                        ▲ 6 
+                                        ▲ 6
                                     </span>
                                 </div>
                             </div>
